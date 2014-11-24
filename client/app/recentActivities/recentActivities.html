@@ -1,0 +1,16 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <h2>FitSmart Kids</h2>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+    {{error}}
+    <ul>
+      <li ng-repeat="activity in activities">{{activity.name}} - {{activity.calories}} calories burned - {{activity.duration / 1000 / 60}} minutes long.</li>
+    </ul>
+    </div>
+  </div>
+</div>

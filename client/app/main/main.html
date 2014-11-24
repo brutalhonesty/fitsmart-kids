@@ -1,0 +1,33 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <h2>FitSmart Kids</h2>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+    {{error}}
+      <div ng-show="!user">
+        <h3>Login with Fitbit</h3>
+        <button ng-click="connect()">
+          <img src="//i.imgur.com/f7BKFw9.png" width="150"/>
+        </button>
+      </div>
+      <div ng-show="user">
+        <img ng-src="{{user.avatar}}" alt="Avatar">
+        <p>DoB: {{user.dateOfBirth}}</p>
+        <p>Name: {{user.fullName}}</p>
+        <p>Gender: {{user.gender}}</p>
+        <p>Height ({{user.heightUnit === 'en_US' ? 'Inches' : 'Centimeters'}}): {{user.height}}</p>
+        <p>Weight ({{user.weightUnit === 'en_US' ? 'Lbs.' : 'Stone'}}): {{user.weight}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    Make with ♥ from <a href="//github.com/brutalhonesty">brutalhonesty</a>
+  </div>
+</footer>

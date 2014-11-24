@@ -1,0 +1,35 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <h2>FitSmart Kids</h2>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+    {{error}}
+    <h2>History</h2>
+    <h3>Steps</h3>
+    <h4 ng-show="stepHistory.length === 0">No Steps History</h4>
+    <ul>
+      <li ng-repeat="steps in stepHistory">
+      {{steps.dateTime}} - {{steps.value}} steps
+      </li>
+    </ul>
+    <h3>Weight</h3>
+    <h4 ng-show="weightHistory.length === 0">No Weight History</h4>
+    <ul>
+      <li ng-repeat="weight in weightHistory">
+        {{weight.date}} - {{weight.bmi}} BMI - {{weight.weight}} Lbs.
+      </li>
+    </ul>
+    <h3>Sleep</h3>
+    <h4 ng-show="sleepHistory.length === 0">No Sleep History</h4>
+    <ul>
+      <li ng-repeat="sleep in sleepHistory">
+        {{sleep.dateTime}} - {{sleep.value / 60}} hours
+      </li>
+    </ul>
+    </div>
+  </div>
+</div>
